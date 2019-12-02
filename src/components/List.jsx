@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import Message from "./Message";
 
 async function fetchMessage(callback) {
     const response = await fetch('https://api.larus.fr/pwa/post');
