@@ -53,15 +53,26 @@ self.addEventListener('fetch', function (event) {
 
 self.addEventListener('notificationclose', event => {
     const {notification, action} = event;
-    console.log('👷','notificationclose', action, notification.data.id);
+    console.log('👷', 'notificationclose', action, notification.data.id);
 });
 
 self.addEventListener('notificationclick', event => {
     const {notification, action} = event;
-    console.log('👷','notificationclick', action, notification.data.id);
+    console.log('👷', 'notificationclick', action, notification.data.id);
 
     if (action !== 'close' && notification.data.id === 'NEW_MESSAGE') {
         clients.openWindow('post');
     }
     notification.close();
+});
+
+self.addEventListener('push', event => {
+    console.log('👷', 'push');
+    const options = {
+        body: "Cette notification a été envoyée à partir d'un push!",
+    };
+
+    event.waitUntil(
+        self.registration.showNotification('Push Notification', options)
+    );
 });
