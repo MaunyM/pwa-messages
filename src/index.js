@@ -7,4 +7,9 @@ ReactDOM.render(<App/>, document.getElementById('root'));
 
 navigator.serviceWorker.register('serviceWorker.js');
 
+Notification.requestPermission().then(status => {
+    console.log('Notification permission status:', status);
+});
+
+
 
