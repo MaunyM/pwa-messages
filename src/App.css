@@ -1,22 +1,23 @@
 .App {
-  text-align: center;
+    min-height: 100vh;
+    background-color: #292d3e;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.App main {
+    flex-grow: 2;
+}
+
+.App footer {
+    padding: 5px;
+    background-color: #09d3ac;
+    justify-content: end;
 }
 
 .App-logo {
-  height: 40vmin;
+    height: 5vmin;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #09d3ac;
-}

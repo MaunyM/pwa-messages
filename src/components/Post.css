@@ -1,0 +1,24 @@
+.MessageForm {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+}
+
+.MessageForm label {
+    margin: 5px;
+}
+
+.MessageForm .Item {
+    width: 100%;
+}
+
+.MessageForm textarea {
+    height: 4em;
+}
+
+.MessageForm button {
+    background-color: #09d3ac;
+    color: white;
+    margin-left: 5px;
+}
+

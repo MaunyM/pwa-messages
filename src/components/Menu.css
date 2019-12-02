@@ -1,0 +1,19 @@
+.Menu a {
+    padding: 5px;
+}
+
+.Menu a:visited {
+    color: white;
+}
+
+.Menu a.active {
+    font-weight: bold;
+}
+
+.Menu {
+    background-color: #09d3ac;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
