@@ -20,13 +20,6 @@ function List() {
 
     return (
         <div>
-            <header className="App-header">
-                <img src={"logo.svg"} className="App-logo" alt="logo"/>
-                <nav>
-                    <NavLink exact={true} to="/">Accueil</NavLink>
-                    <NavLink exact={true} to="/post">Nouveau message</NavLink>
-                </nav>
-            </header>
             {messages.map(message => (<Message key={message.key} message={message}/>))}
         </div>
     );
