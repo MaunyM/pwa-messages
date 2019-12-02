@@ -5,12 +5,14 @@ import Menu from "./components/Menu";
 import './App.css';
 import List from "./components/List";
 import Post from "./components/Post";
+import ShowNotification from "./components/ShowNotification";
 
 function App() {
     return (
         <Router>
             <div className={'App'}>
                 <Menu/>
+                <ShowNotification/>
                 <Switch>
                     <Route path={"/post"}>
                         <Post/>
