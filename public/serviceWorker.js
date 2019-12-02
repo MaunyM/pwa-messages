@@ -50,3 +50,18 @@ self.addEventListener('fetch', function (event) {
         })
     );
 });
+
+self.addEventListener('notificationclose', event => {
+    const {notification, action} = event;
+    console.log('👷','notificationclose', action, notification.data.id);
+});
+
+self.addEventListener('notificationclick', event => {
+    const {notification, action} = event;
+    console.log('👷','notificationclick', action, notification.data.id);
+
+    if (action !== 'close' && notification.data.id === 'NEW_MESSAGE') {
+        clients.openWindow('post');
+    }
+    notification.close();
+});

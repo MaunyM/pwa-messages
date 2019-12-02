@@ -9,9 +9,12 @@ function ShowNotification() {
                     body: 'Une notification avec option !',
                     icon: 'logo192.png',
                     vibrate: [100, 50, 100],
-                    date: {
-                        id: 'HELLO_NOTIF'
-                    }
+                    data: {
+                        id: 'NEW_MESSAGE'
+                    },
+                    actions: [
+                        {action: 'Nouveau message', title: 'Publier un nouveau message'},
+                    ]
                 };
                 reg.showNotification('Hello !', options);
             });
