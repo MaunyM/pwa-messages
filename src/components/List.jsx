@@ -1,8 +1,5 @@
 import React, {useEffect, useState} from 'react';
 
-import {NavLink} from "react-router-dom";
-import Message from "./Message";
-
 async function fetchMessage(callback) {
     const response = await fetch('https://api.larus.fr/pwa/post');
     const json = await response.json();
