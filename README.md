@@ -1,3 +1,5 @@
+![Male technologist](/asset/male-technologist-type-1-2_1f468-1f3fb-200d-1f4bb.png)
+# pwa-messages
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
