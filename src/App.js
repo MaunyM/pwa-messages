@@ -2,8 +2,8 @@ import React from 'react';
 import {Switch, Route, BrowserRouter as Router} from 'react-router-dom';
 
 import Menu from './components/Menu';
-import Post from './components/Post';
 import List from './components/List';
+import Post from './components/Post';
 
 import './App.css';
 
