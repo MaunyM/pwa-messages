@@ -16,6 +16,7 @@ function List() {
         return () => isSubscribed = false;
     }, []);
 
+    // Appel d'un composant message pour chaque message
     return (
         <div>
             {messages.map(message => (<Message key={message.key} message={message}/>))}
