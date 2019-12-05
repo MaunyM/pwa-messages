@@ -1,0 +1,25 @@
+{
+    "start_url": ".",
+    "name": "PWA 3winfo project",
+    "short_name": "3winfo",
+    "display": "standalone",
+    "icons": [
+        {
+          "src": "favicon.ico",
+          "type": "image/x-icon",
+          "sizes": "64x64 32x32 16x16"
+        },
+        {
+          "src": "logo192.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        },
+        {
+          "src": "logo512.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        }
+      ]
+
+
+}
