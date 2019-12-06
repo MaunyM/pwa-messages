@@ -11,3 +11,7 @@ navigator.serviceWorker.register('serviceWorker.js').then(
         console.log('SW load');
     }
 );
+
+Notification.requestPermission().then(status => {
+    console.log(status);
+});
