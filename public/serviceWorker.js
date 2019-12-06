@@ -29,7 +29,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', function (event) {
     console.log('👷', 'fetch', event);
     const requestURL = new URL(event.request.url);
-    if (requestURL.hostname === 'api.larus.fr') {
+    if (event.request.method === 'GET' && requestURL.hostname === 'api.larus.fr') {
         event.respondWith(
             caches.open(CACHE_NAME).then(
                 (cache) => {
