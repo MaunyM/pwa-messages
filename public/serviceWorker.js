@@ -24,9 +24,28 @@ self.addEventListener('activate', () => {
     console.log('activated');
 });
 
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', function (event) {
     //console.log('fetched', event, event.request);
+    const requestURL = new URL(event.request.url);
+    if (requestURL.hostname === 'api.larus.fr') {
+        event.respondWith(
+            caches.open(CACHE_NAME).then(
+                (cache) => {
+                    return fetch(event.request)
+                        .then(
+                            function (response) {
+                                cache.put(event.request, response.clone());
+                                return response;
+                            })
+                        .catch(() => caches.match(event.request))
+                })
+        );
+        return;
+    }
     event.respondWith(
-        caches.match(event.request).then(response => response || fetch(event.request))
-    )
+        caches.match(event.request).then(function (response) {
+            return response || fetch(event.request);
+        })
+    );
 });
+
