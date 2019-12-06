@@ -33,7 +33,26 @@ self.addEventListener('activate', () => {
 self.addEventListener('fetch', (event) => {
 
     event.respondWith(
-        caches.match(event.request).then(response => response || fetch(event.request))
+        // caches.match(event.request).then(response => response || fetch(event.request))
+        caches.match(event.request).then(response => response || fetch(event.request).then(
+            (response) => {
+                if (event.request.method === "GET") {
+                    caches.open(CACHE_NAME).then(
+                        (cache) => {
+                            // console.log("===== event.request.method =====");
+                            // console.log(event.request);
+                            if (event.request.method === "GET") {
+                                return cache.put(event.request, response);
+                            }
+                            else {
+                                return response;
+                            }
+
+                        }
+                    )
+                }
+            }
+        ))
     )
 
     // Cache only

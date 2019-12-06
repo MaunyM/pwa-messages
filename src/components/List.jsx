@@ -3,6 +3,8 @@ import Message from "./Message";
 
 async function fetchMessage(callback) {
     const response = await fetch('https://api.larus.fr/pwa/post');
+    // console.log("===== response =====");
+    // console.log(response);
     const json = await response.json();
     callback(json);
 }
