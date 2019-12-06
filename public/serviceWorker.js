@@ -49,3 +49,28 @@ self.addEventListener('fetch', function (event) {
     );
 });
 
+self.addEventListener('notificationclick', event => {
+    const {notification, action} = event;
+    console.log('notification clicked', notification.data.id);
+
+    if (action !== 'close' && notification.data.id === 'TEST_ID') {
+        clients.openWindow('post');
+    }
+    notification.close();
+});
+
+self.addEventListener('notificationclose', event => {
+    console.log('notification closed');
+});
+
+self.addEventListener('push', event => {
+    const {data} = event;
+    const payload = data.json();
+    const options = {
+        body: `${payload.client} vous avez reçu la pièce de la marque ${payload.marque}`,
+    };
+
+    event.waitUntil(
+        self.registration.showNotification('Push Notification', options)
+    );
+});
