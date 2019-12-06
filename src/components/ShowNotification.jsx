@@ -9,7 +9,7 @@ function ShowNotification() {
                     const options = {
                         body: "Nom de la notif",
                         icon: "logo192.png",
-                        vibrate: [100, 50, 100],
+                        vibrate: [500, 200, 500],
                         actions: [
                             {action: 'Nouveau message', title: 'Publier un nouveau message'},
                         ]
