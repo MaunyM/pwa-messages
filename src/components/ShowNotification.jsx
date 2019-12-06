@@ -9,7 +9,7 @@ function ShowNotification() {
                 const options = {
                     body: 'Une notification avec option !',
                     icon: 'logo192.png',
-                    vibrate: [20, 20, 80, 20],
+                    vibrate: [50, 50, 50, 50, 20],
                     data: {
                         id: 'NEW_MESSAGE'
                     },

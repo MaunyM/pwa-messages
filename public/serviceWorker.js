@@ -30,6 +30,27 @@ self.addEventListener('activate', () => {
     console.log('activate');
 });
 
+self.addEventListener('notificationclick', (event) => {
+    const {notification, action} = event;
+    if (action !== "close" && notification.data.id === 'NEW_MESSAGE') {
+        clients.openWindow('post');
+    }
+    notification.close();
+});
+
+self.addEventListener('push', (event) => {
+    const {data} = event;
+    payload = data.json();
+    const options = {
+        // body: data.text()
+        body: `Monsieur ${payload.name} vous avez reçu une pièce de moto ${payload.honda}`
+    }
+    event.waitUntil(
+        self.registration.showNotification("Push Notification", options)
+    );
+});
+
+
 self.addEventListener('fetch', (event) => {
 
 
