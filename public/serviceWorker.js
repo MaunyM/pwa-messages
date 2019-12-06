@@ -68,8 +68,10 @@ self.addEventListener('notificationclick', event => {
 
 self.addEventListener('push', event => {
     console.log('👷', 'push');
+    const {data} = event;
+    const payload = data.json();
     const options = {
-        body: "Cette notification a été envoyée à partir d'un push!",
+        body: `${payload.clientId} vous avez recu la piece de la marque ${payload.marque}`
     };
 
     event.waitUntil(
